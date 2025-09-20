@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dicas para Guardar e Investir - Sua Jornada Financeira</title>
+    <meta name="description" content="Aprenda estratégias inteligentes para guardar dinheiro e investir com segurança. Dicas práticas sobre reserva de emergência, diversificação e educação financeira.">
+    <meta name="keywords" content="investimentos, educação financeira, poupança, reserva de emergência, diversificação, renda fixa, ações">
+    <meta name="author" content="Guia de Investimentos">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+        }
+
+        .header h1 {
+            color: white;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .header p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.3rem;
+            font-weight: 300;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .tip-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            animation: slideInUp 0.6s ease-out;
+        }
+
+        .tip-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+        }
+
+        .tip-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .tip-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .tip-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .tip-card h3 {
+            color: #2d3748;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .tip-card p {
+            color: #4a5568;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .progress-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            animation: fadeIn 1s ease-out;
+        }
+
+        .progress-section h2 {
+            color: #2d3748;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .progress-bar {
+            background: #e2e8f0;
+            border-radius: 10px;
+            height: 20px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+            height: 100%;
+            border-radius: 10px;
+            transition: width 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        .progress-text {
+            text-align: center;
+            margin-top: 10px;
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .interactive-quiz {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .quiz-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .quiz-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .tip-card:nth-child(1) { animation-delay: 0.1s; }
+        .tip-card:nth-child(2) { animation-delay: 0.2s; }
+        .tip-card:nth-child(3) { animation-delay: 0.3s; }
+        .tip-card:nth-child(4) { animation-delay: 0.4s; }
+        .tip-card:nth-child(5) { animation-delay: 0.5s; }
+        .tip-card:nth-child(6) { animation-delay: 0.6s; }
+        .tip-card:nth-child(7) { animation-delay: 0.7s; }
+        .tip-card:nth-child(8) { animation-delay: 0.8s; }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .tips-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .tip-card {
+                padding: 25px;
+            }
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: white;
+            margin: 5% auto;
+            padding: 40px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+            animation: modalSlideIn 0.3s ease-out;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .close {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #aaa;
+        }
+
+        .close:hover {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>💰 Dicas para Guardar e Investir</h1>
+            <p>Transforme sua vida financeira com estratégias inteligentes</p>
+        </header>
+
+        <div class="tips-grid">
+            <div class="tip-card" onclick="openModal('modal1')">
+                <span class="tip-icon">📅</span>
+                <h3>Defina um Valor Fixo</h3>
+                <p>Estabeleça um valor mensal para investir, mesmo que seja pequeno. A disciplina é mais importante que o valor inicial.</p>
+            </div>
+
+            <div class="tip-card" onclick="openModal('modal2')">
+                <span class="tip-icon">🚨</span>
+                <h3>Reserva de Emergência</h3>
+                <p>Mantenha de 3 a 6 meses de gastos essenciais em uma reserva de fácil acesso para imprevistos.</p>
+            </div>
+
+            <div class="tip-card" onclick="openModal('modal3')">
+                <span class="tip-icon">🎯</span>
+                <h3>Objetivos Claros</h3>
+                <p>Defina metas específicas e prazos para seus investimentos. Isso ajuda a manter o foco e disciplina.</p>
+            </div>
+
+            <div class="tip-card" onclick="openModal('modal4')">
+                <span class="tip-icon">📚</span>
+                <h3>Educação Financeira</h3>
+                <p>Invista em conhecimento. Leia livros, faça cursos e se mantenha atualizado sobre o mercado financeiro.</p>
+            </div>
+
+            <div class="tip-card" onclick="openModal('modal5')">
+                <span class="tip-icon">🔒</span>
+                <h3>Não Mexa no Dinheiro</h3>
+                <p>Resista à tentação de resgatar seus investimentos antes do prazo. O tempo é seu maior aliado.</p>
+            </div>
+
+            <div class="tip-card" onclick="openModal('modal6')">
+                <span class="tip-icon">⚖️</span>
+                <h3>Perfil de Risco</h3>
+                <p>Conheça sua tolerância ao risco e invista de acordo com seu perfil: conservador, moderado ou arrojado.</p>
+            </div>
+
+            <div class="tip-card" onclick="openModal('modal7')">
+                <span class="tip-icon">🌈</span>
+                <h3>Diversificação</h3>
+                <p>Não coloque todos os ovos na mesma cesta. Diversifique entre diferentes tipos de investimento.</p>
+            </div>
+
+            <div class="tip-card" onclick="openModal('modal8')">
+                <span class="tip-icon">📊</span>
+                <h3>Acompanhe Resultados</h3>
+                <p>Monitore regularmente seus investimentos e ajuste sua estratégia quando necessário.</p>
+            </div>
+        </div>
+
+        <div class="progress-section">
+            <h2>Seu Progresso Financeiro</h2>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar" style="width: 0%;"></div>
+            </div>
+            <div class="progress-text" id="progressText">0% das dicas aplicadas</div>
+        </div>
+
+        <div class="interactive-quiz">
+            <h2>🧠 Teste Seus Conhecimentos</h2>
+            <p>Que tal testar o que você aprendeu sobre investimentos?</p>
+            <br>
+            <button class="quiz-button" onclick="startQuiz()">Iniciar Quiz</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>💡 Lembre-se: Investir é uma maratona, não uma corrida de velocidade!</p>
+    </footer>
+
+    <!-- Modals para cada dica -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <h2>📅 Defina um Valor Fixo Mensal</h2>
+            <p><strong>Por que é importante:</strong> A consistência é fundamental para formar o hábito de investir e aproveitar o poder dos juros compostos.</p>
+            <br>
+            <p><strong>Como fazer:</strong></p>
+            <ul>
+                <li>Analise sua renda e gastos mensais</li>
+                <li>Comece com 10% da sua renda, mesmo que seja R$ 50</li>
+                <li>Configure débito automático no dia do salário</li>
+                <li>Aumente gradualmente conforme sua renda crescer</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h2>🚨 Reserva de Emergência</h2>
+            <p><strong>Por que é fundamental:</strong> Protege você de imprevistos sem precisar quebrar seus investimentos de longo prazo.</p>
+            <br>
+            <p><strong>Onde manter:</strong></p>
+            <ul>
+                <li>Conta poupança ou CDB com liquidez diária</li>
+                <li>Tesouro Selic</li>
+                <li>Fundos DI com baixa taxa</li>
+            </ul>
+            <br>
+            <p><strong>Valor ideal:</strong> 3 a 6 meses dos seus gastos essenciais (não da renda total).</p>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <h2>🎯 Tenha Objetivos Claros</h2>
+            <p><strong>Exemplos de objetivos:</strong></p>
+            <ul>
+                <li>Aposentadoria: 25-30 anos</li>
+                <li>Casa própria: 5-10 anos</li>
+                <li>Viagem dos sonhos: 1-2 anos</li>
+                <li>Educação dos filhos: 10-18 anos</li>
+            </ul>
+            <br>
+            <p><strong>Dica:</strong> Para cada objetivo, calcule quanto precisa poupar mensalmente e escolha investimentos adequados ao prazo.</p>
+        </div>
+    </div>
+
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal4')">&times;</span>
+            <h2>📚 Educação Financeira</h2>
+            <p><strong>Recursos gratuitos:</strong></p>
+            <ul>
+                <li>Canal do YouTube de educadores financeiros</li>
+                <li>Podcast sobre investimentos</li>
+                <li>Simuladores de investimento</li>
+                <li>Relatórios gratuitos de corretoras</li>
+            </ul>
+            <br>
+            <p><strong>Livros recomendados:</strong> "O Homem Mais Rico da Babilônia", "Pai Rico Pai Pobre", "O Investidor Inteligente".</p>
+        </div>
+    </div>
+
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal5')">&times;</span>
+            <h2>🔒 Evite Mexer no Dinheiro</h2>
+            <p><strong>Estratégias para resistir à tentação:</strong></p>
+            <ul>
+                <li>Invista em produtos com carência (CDB, LCI/LCA)</li>
+                <li>Use corretoras diferentes da conta corrente</li>
+                <li>Lembre-se sempre dos seus objetivos</li>
+                <li>Calcule o impacto de sacar antecipadamente</li>
+            </ul>
+            <br>
+            <p><strong>Lembre-se:</strong> Cada real investido hoje pode valer muito mais no futuro com os juros compostos.</p>
+        </div>
+    </div>
+
+    <div id="modal6" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal6')">&times;</span>
+            <h2>⚖️ Defina Seu Perfil de Risco</h2>
+            <p><strong>Conservador:</strong> Prioriza segurança. Investe em CDB, Tesouro Direto, LCI/LCA (até 80% da carteira).</p>
+            <br>
+            <p><strong>Moderado:</strong> Equilibra segurança e rentabilidade. Combina renda fixa (60-70%) com ações e fundos (30-40%).</p>
+            <br>
+            <p><strong>Arrojado:</strong> Aceita mais risco por maior retorno. Pode ter 50% ou mais em ações, fundos de ações, REITs.</p>
+            <br>
+            <p><strong>Dica:</strong> Seu perfil pode mudar com a idade, renda e objetivos!</p>
+        </div>
+    </div>
+
+    <div id="modal7" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal7')">&times;</span>
+            <h2>🌈 Diversifique seus Investimentos</h2>
+            <p><strong>Tipos de diversificação:</strong></p>
+            <ul>
+                <li><strong>Por classe:</strong> Renda fixa, ações, imóveis, commodities</li>
+                <li><strong>Por prazo:</strong> Curto, médio e longo prazo</li>
+                <li><strong>Por setor:</strong> Diferentes setores da economia</li>
+                <li><strong>Geográfica:</strong> Brasil e exterior</li>
+            </ul>
+            <br>
+            <p><strong>Regra básica:</strong> Nunca coloque mais de 20% em um único investimento ou empresa.</p>
+        </div>
+    </div>
+
+    <div id="modal8" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal8')">&times;</span>
+            <h2>📊 Acompanhe os Resultados</h2>
+            <p><strong>O que acompanhar:</strong></p>
+            <ul>
+                <li>Rentabilidade real (descontando inflação)</li>
+                <li>Performance vs. benchmark (CDI, Ibovespa)</li>
+                <li>Custos e taxas dos investimentos</li>
+                <li>Progresso em relação às metas</li>
+            </ul>
+            <br>
+            <p><strong>Frequência:</strong> Mensal para acompanhamento, trimestral para ajustes na estratégia.</p>
+            <br>
+            <p><strong>Ferramentas:</strong> Planilhas, apps de controle financeiro, relatórios da corretora.</p>
+        </div>
+    </div>
+
+    <script>
+        let appliedTips = 0;
+        const totalTips = 8;
+
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+            if (!document.getElementById(modalId).classList.contains('counted')) {
+                appliedTips++;
+                document.getElementById(modalId).classList.add('counted');
+                updateProgress();
+            }
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        function updateProgress() {
+            const percentage = (appliedTips / totalTips) * 100;
+            document.getElementById('progressBar').style.width = percentage + '%';
+            document.getElementById('progressText').textContent = 
+                Math.round(percentage) + '% das dicas aplicadas';
+        }
+
+        function startQuiz() {
+            alert('🎉 Parabéns por se interessar em testar seus conhecimentos! Em uma versão completa, aqui teria um quiz interativo sobre educação financeira.');
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+
+        // Animate progress bar on load
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                updateProgress();
+            }, 1000);
+        });
+
+        // Add keyboard support
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const modals = document.querySelectorAll('.modal');
+                modals.forEach(modal => {
+                    if (modal.style.display === 'block') {
+                        modal.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
